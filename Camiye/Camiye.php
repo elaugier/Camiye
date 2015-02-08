@@ -44,6 +44,14 @@ class Camiye
         $this->application_name = $name;
     }
 
+    public function getApplicationEnvironment(){
+        return $this->application_environment;
+    }
+
+    public function setAppplicationEnvironment($env){
+        $this->application_environment = $env;
+    }
+
     public function pdo_set($data)
     {
         if (isset($data['pdo_database'])) {
