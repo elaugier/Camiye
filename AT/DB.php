@@ -26,15 +26,15 @@ class DB {
         }
         return self::$connection;
     }
-    public function exec($sql)
+    public static function exec($sql)
     {
         return self::$connection->exec($sql);
     }
-    public function query($sql)
+    public static function query($sql)
     {
         return self::$connection->query($sql);
     }
-    public function prepare($sql)
+    public static function prepare($sql)
     {
         return self::prepare($sql);
     }

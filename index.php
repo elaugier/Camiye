@@ -6,8 +6,15 @@ $params = [
     "dbusername" => "elaugier_njuyhbv",
     "dbpassword" => "q2VqXXDeYyw6V87m9d82",
 ];
-require './AT/DB.php';
-$db = new \AT\DB($params['dbhostname'],$params['dbname'],$params['dbusername'],$params['dbpassword']);
 
-$result = $db->query("describe api_session");
-var_dump($result);
+$db = new PDO("mysql:host=" . $params['dbhostname'] .
+    ";dbname=" . $params['dbname'] . ";charset=UTF8",
+    $params['dbusername'],
+    $params['dbpassword']
+);
+
+
+foreach($db->query("show tables") as $row)
+{
+    print $row['id'];
+}
