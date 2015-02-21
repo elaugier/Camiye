@@ -7,6 +7,6 @@ $db = new \AT\DB($params);
 //$db->CreateClasses();
 
 $member = new \AT\Member();
-json_encode($member->get());
+echo json_encode($member->get());
 
 

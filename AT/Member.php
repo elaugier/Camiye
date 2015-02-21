@@ -22,7 +22,7 @@ class Member {
         $result = $this->db->query($SQL);
         $rows = array();
         while($r = $result->fetch(PDO::FETCH_ASSOC))
-        { $rows[] = $r; }
+        { $rows[strtolower(str_replace(__NAMESPACE__ . '\\', '', __CLASS__))][] = $r; }
         return $rows;
     }
 }
